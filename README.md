@@ -177,9 +177,9 @@ Due to limited resources, an issue older than 6 months will be automatically clo
 
 For Enterprise Support, [Jaided AI](https://www.jaided.ai/) offers full service for custom OCR/AI systems from implementation, training/finetuning and deployment. Click [here](https://www.jaided.ai/contactus?ref=github) to contact us.
 
-# ID Card Text Extraction
+# Aadhaar Card Text Extraction
 
-Python scripts to extract text from Indian ID cards (Aadhaar and PAN) using EasyOCR.
+A Python script to extract text from Aadhaar cards using EasyOCR. Extracts name, DOB, gender, and Aadhaar number.
 
 ## Prerequisites
 
@@ -190,8 +190,8 @@ Python scripts to extract text from Indian ID cards (Aadhaar and PAN) using Easy
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/deshmukhsakshi296/ID-Card-Extractor.git
-cd ID-Card-Extractor
+git clone https://github.com/yourusername/EasyOCR.git
+cd EasyOCR
 ```
 
 2. Install dependencies:
@@ -201,12 +201,19 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Aadhaar Card Text Extraction
+Run the script with an Aadhaar card image:
 ```bash
 python test_easyocr_basic.py path/to/your/aadhaar_card.jpg
 ```
 
-Output format:
+Example:
+```bash
+python test_easyocr_basic.py examples/aadhaar.jpg
+```
+
+## Output Format
+
+The script outputs data in JSON format:
 ```json
 {
   "Name": "Gayatri Singh",
@@ -216,28 +223,12 @@ Output format:
 }
 ```
 
-### PAN Card Text Extraction
-```bash
-python test_pan_extract.py path/to/your/pan_card.jpg
-```
-
-Output format:
-```
-Name: Kishor Kumar
-Father Name: Hanuman Ram
-DOB: 16/09/1985
-PAN Number: COSPKIZOSD
-```
-
-## Features
-
-- Supports both English and Hindi text
-- Handles different image qualities
-- Extracts key information automatically
-- Provides debug output for verification
+## Supported Languages
+- English
+- Hindi
+- Marathi
 
 ## Notes
-- First run will download required OCR models
+- First run will download OCR models (may take a few minutes)
 - Works best with clear, well-lit images
-- Supports multiple languages (English, Hindi, Marathi)
-- No image data is stored or transmitted
+- Supports both English and Hindi text on Aadhaar cards
