@@ -176,3 +176,68 @@ Due to limited resources, an issue older than 6 months will be automatically clo
 ## Business Inquiries
 
 For Enterprise Support, [Jaided AI](https://www.jaided.ai/) offers full service for custom OCR/AI systems from implementation, training/finetuning and deployment. Click [here](https://www.jaided.ai/contactus?ref=github) to contact us.
+
+# ID Card Text Extraction
+
+Python scripts to extract text from Indian ID cards (Aadhaar and PAN) using EasyOCR.
+
+## Prerequisites
+
+- Python 3.8 or higher
+- pip (Python package installer)
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/deshmukhsakshi296/ID-Card-Extractor.git
+cd ID-Card-Extractor
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+### Aadhaar Card Text Extraction
+```bash
+python test_easyocr_basic.py path/to/your/aadhaar_card.jpg
+```
+
+Output format:
+```json
+{
+  "Name": "Gayatri Singh",
+  "DOB": "05/05/1995",
+  "Gender": "Female",
+  "Aadhaar_Number": "262146442086"
+}
+```
+
+### PAN Card Text Extraction
+```bash
+python test_pan_extract.py path/to/your/pan_card.jpg
+```
+
+Output format:
+```
+Name: Kishor Kumar
+Father Name: Hanuman Ram
+DOB: 16/09/1985
+PAN Number: COSPKIZOSD
+```
+
+## Features
+
+- Supports both English and Hindi text
+- Handles different image qualities
+- Extracts key information automatically
+- Provides debug output for verification
+
+## Notes
+- First run will download required OCR models
+- Works best with clear, well-lit images
+- Supports multiple languages (English, Hindi, Marathi)
+- No image data is stored or transmitted
